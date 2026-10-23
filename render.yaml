@@ -1,36 +1,48 @@
-# Render blueprint — client: K2 Ladies Designer (root repo)
+# Render blueprint — client: Svarna Studio
 # STATIC SITE — no backend service block. This repo is a static frontend only.
 # Do NOT copy this file into another client's repo — each client repo has its
 # own Render service.
 
 services:
   - type: static_site
-    name: k2-ladies-designer-shop
+    name: svarna-studio
     runtime: node
     plan: free
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --legacy-peer-deps && npm run build
     publishPath: dist
-    branch: client/k2-ladies-designer
+    branch: main
     envVars:
       # BUG 4.4: env var names are CASE-SENSITIVE on Render — keep these EXACTLY
       # as written (same names in .env.example and the Render dashboard).
       - key: VITE_SHOP_NAME
-        value: K2 Ladies Designer
+        value: Svarna Studio
       - key: VITE_SHOP_TAGLINE
-        value: Bridal blouses, Aari & Maggam work, and made-to-measure occasion wear
+        value: Sarees, kurta sets, co-ord sets, tops and Indo-Western wear
       - key: VITE_SHOP_FOUNDED_YEAR
         value: "2010"
       - key: VITE_SHOP_LOGO_PATH
         value: /favicon.ico
       - key: VITE_WHATSAPP_NUMBER
-        value: "919790094017"
+        value: "917350495906"
       - key: VITE_INSTAGRAM_HANDLE
-        value: ""
+        value: svarnastudio
       - key: VITE_CONTACT_EMAIL
-        value: support@k2ladiesdesigner.com
+        value: contact@svarnastudio.in
       - key: VITE_WEBSITE_URL
-        value: https://k2ladiesdesigner.com
+        value: https://www.svarnastudio.in
       - key: VITE_GOOGLE_MAPS_URL
-        value: "https://www.google.com/maps/search/?api=1&query=K2+Ladies+Designer+86-2%2F476A+Venkatasamy+Road+Annapoorna+Layout+New+Siddhapudur+Coimbatore",
+        value: "https://www.google.com/maps/search/?api=1&query=Svarna+Studio+Ganesha+Residency+Bhole+Baba+Nagar+Uday+Nagar+Nagpur"
       - key: VITE_GOOGLE_MAPS_EMBED_URL
         value: ""
+      - key: VITE_SHOP_STREET
+        value: "Ganesha Residency, Bhole Baba Nagar"
+      - key: VITE_SHOP_LOCALITY
+        value: "Uday Nagar"
+      - key: VITE_SHOP_CITY
+        value: "Nagpur"
+      - key: VITE_SHOP_REGION
+        value: "Maharashtra"
+      - key: VITE_SHOP_POSTAL
+        value: "440001"
+      - key: VITE_SHOP_HOURS
+        value: "Monday – Saturday · 10 AM - 8 PM"
